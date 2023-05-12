@@ -1,4 +1,4 @@
-from collections import deque
+
 
 from fichas import Ficha
 from jugador import Jugador
@@ -28,7 +28,7 @@ while(cantidad_fichas!=0):
     cantidad_fichas-=1
     lado2+=1
     mesa.fichas_iniciales.append(ficha)
-#Generar jugadores
+#Generar  y guardarlos en la lista mesa.jugadores
 for i in range(4):
     player=Jugador()
     if(i==0):
@@ -40,16 +40,14 @@ for i in range(4):
 for i in mesa.fichas_iniciales:
     print(i.numero_ficha)
 """
-print("antes")
-for i in mesa.fichas_iniciales:
-    print(i.numero_ficha)
 #Revolver fichas
 mesa.revolver_fichas()
 
-print()
-print("despues")
-for i in mesa.fichas_iniciales:
-    print(i.numero_ficha)
+#Repartir fichas
+mesa.repartir_fichas()
+
+
+
 
 
 
