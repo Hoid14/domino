@@ -37,14 +37,17 @@ for i in range(4):
         player.nombre="Maquina "+str(i)
     mesa.jugadores.append(player)
 """"
+muestra fichas de domino
 for i in mesa.fichas_iniciales:
-    print(i.numero_ficha)
+    print(i.numero_ficha," - ",i.lado1," - ",i.lado2)
 """
+
 #Revolver fichas
 mesa.revolver_fichas()
 
 #Repartir fichas
 mesa.repartir_fichas()
+
 
 
 

@@ -9,6 +9,7 @@ class Mesa:
         self.ficha_extremo2=ficha_extremo2
         self.fichas_jugadas=[]
         self.jugadores=[]
+        self.jugador_inicial=None
     
     def revolver_fichas(self):
         random.shuffle(self.fichas_iniciales)
@@ -23,7 +24,10 @@ class Mesa:
             if(contador_jugador==len(self.jugadores)):
                 contador_jugador=0
             self.jugadores[contador_jugador].lista_fichas.append(ficha)
+            if(ficha.numero_ficha==28):
+                self.jugador_inicial=self.jugadores[contador_jugador]
             contador_jugador+=1
-            
+
+          
 
 
