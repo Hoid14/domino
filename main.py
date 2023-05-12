@@ -1,8 +1,10 @@
 from fichas import Ficha
 from jugador import Jugador
+from mesa import Mesa
+#Generar mesa
+mesa=Mesa()
 
-#Genera todas las fichas del juego y las guarda en l
-l=[] #Las guarda aqui
+#Generar todas las fichas del juego y las guarda en fichas_iniciales de la mesa
 cantidad_fichas=28
 contador_final=7
 contador=0
@@ -20,12 +22,26 @@ while(cantidad_fichas!=0):
     contador+=1
     cantidad_fichas-=1
     lado2+=1
-    l.append(ficha)
-
-for i in l:
-    print(i.lado1," - ",i.lado2)
-
+    mesa.fichas_iniciales.append(ficha)
 #Generar jugadores
+for i in range(4):
+    player=Jugador()
+    if(i==0):
+        player.nombre="Humano"
+    else:
+        player.nombre="Maquina "+str(i)
+    mesa.jugadores.append(player)
+
+for i in mesa.jugadores:
+    print(i.nombre)
+
+#Repartir fichas
+
+
+
+    
+
+
 
 
 

@@ -1,5 +1,5 @@
 class Jugador:
-    def __init__(self, nombre):
+    def __init__(self, nombre=None):
         self.nombre=nombre
         self.lista_fichas=[]
     
