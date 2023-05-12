@@ -1,9 +1,9 @@
 from fichas import Ficha
+from jugador import Jugador
 
-l=[]
-
+#Genera todas las fichas del juego y las guarda en l
+l=[] #Las guarda aqui
 cantidad_fichas=28
-
 contador_final=7
 contador=0
 lado1=0
@@ -24,4 +24,8 @@ while(cantidad_fichas!=0):
 
 for i in l:
     print(i.lado1," - ",i.lado2)
+
+#Generar jugadores
+
+
 
