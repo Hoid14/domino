@@ -40,6 +40,9 @@ for i in range(4):
 muestra fichas de domino
 for i in mesa.fichas_iniciales:
     print(i.numero_ficha," - ",i.lado1," - ",i.lado2)
+
+for i in mesa.jugadores[mesa.jugador_inicial].lista_fichas:
+    print(i.numero_ficha," - ",i.lado1," - ",i.lado2)
 """
 
 #Revolver fichas
@@ -49,8 +52,11 @@ mesa.revolver_fichas()
 mesa.repartir_fichas()
 
 
+#Inicio del juego
 
 
+
+    
 
 
 

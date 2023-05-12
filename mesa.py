@@ -25,7 +25,7 @@ class Mesa:
                 contador_jugador=0
             self.jugadores[contador_jugador].lista_fichas.append(ficha)
             if(ficha.numero_ficha==28):
-                self.jugador_inicial=self.jugadores[contador_jugador]
+                self.jugador_inicial=contador_jugador
             contador_jugador+=1
 
           
