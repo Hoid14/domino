@@ -11,6 +11,8 @@ class Mesa:
         self.jugadores=[]
         self.jugador_inicial=None
     
+    
+    
     def revolver_fichas(self):
         random.shuffle(self.fichas_iniciales)
     
