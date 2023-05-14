@@ -58,22 +58,50 @@ mesa.repartir_fichas()
 
 #Este es el primer turno, donde se pone el doble 6 y se pasa turno
 jugador_actual=mesa.jugador_inicial #Designamos al jugador actual que comenzara la partida con el doble 6
-if (jugador_actual==len(mesa.jugadores)):
-    jugador_actual=0
+
 for i in mesa.jugadores[jugador_actual].lista_fichas:
     if(i.numero_ficha==28):
         indice=mesa.jugadores[jugador_actual].lista_fichas.index(i)
-        ficha_jugada=mesa.jugadores[jugador_actual].lista_fichas.pop(indice)
+        ficha_jugada=mesa.jugadores[jugador_actual].lista_fichas.pop(indice)#Eliminamos la ficha jugada de su lista de fichas
         
 mesa.fichas_jugadas.append(ficha_jugada) #Agregamos la ficha jugada a la lista de fichas jugadas de mesa
 
 mesa.ficha_extremo1=ficha_jugada.lado1 #Establecemos el extremo 1
 mesa.ficha_extremo2=ficha_jugada.lado2 #Establecemos el extremo 2
 
+print(jugador_actual)
+if (jugador_actual==len(mesa.jugadores)-1):
+    jugador_actual=0
 
 jugador_actual+=1
 
-  
+while True:
+    if mesa.jugadores[jugador_actual].nombre=="Humano": #Esta es la jugada del humano
+        pass
+    else: #Esta es la jugada de la maquina
+        resultado=[mesa.jugadores[jugador_actual].lista_fichas.index(ficha) for ficha in mesa.jugadores[jugador_actual].lista_fichas if ficha.lado1==mesa.ficha_extremo1 or ficha.lado1==mesa.ficha_extremo2 or ficha.lado2==mesa.ficha_extremo1 or ficha.lado2==mesa.ficha_extremo2] #Buscamos en la lista de fichas de la maquina, si el lado 1 de sus fichas coincide con alguno de los extremos
+        
+        print("Fichas de la maquina")
+        for i in mesa.jugadores[jugador_actual].lista_fichas:
+            print(i.lado1," - ",i.lado2) 
+
+        print()
+        print(len(resultado))
+        if len(resultado)>0:
+            ficha_jugada=mesa.jugadores[jugador_actual].lista_fichas.pop(resultado[0]) #Eliminamos la ficha jugada de su lista de fichas
+            mesa.fichas_jugadas.append(ficha_jugada)#Agregamos la ficha jugada a la lista de fichas jugadas de mesa
+
+            #Actualizamos los extremos
+            mesa.ficha_extremo1=ficha_jugada.lado1 #Establecemos el extremo 1
+            mesa.ficha_extremo2=ficha_jugada.lado2 #Establecemos el extremo 2
+
+    
+    a=input()
+    jugador_actual+=1   
+    if jugador_actual==len(mesa.jugadores): 
+        jugador_actual=0
+    
+    
     
 
 
